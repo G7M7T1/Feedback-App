@@ -8,17 +8,17 @@ export const FeedbackProvider = ({children}) => {
         {
             id: 100001,
             rating: 10,
-            text: 'I like this work',
+            text: 'Hello There, This is fine',
         },
         {
             id: 100002,
             rating: 9,
-            text: 'I like this work',
+            text: 'Hi Hi Here Is Other Text',
         },
         {
             id: 100003,
             rating: 8,
-            text: 'I like this work',
+            text: 'Leave your comment here my friend'
         }
     ])
 
