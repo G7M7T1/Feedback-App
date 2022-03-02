@@ -190,6 +190,9 @@ input:focus {
 .about-link {
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -200,7 +203,7 @@ input:focus {
 }
 
 .about-link a:hover {
-  color: #ff6a95;
+  color: #ff004a;
 }
 
 .about h1 {
