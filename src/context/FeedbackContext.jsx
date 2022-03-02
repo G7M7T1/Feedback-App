@@ -8,19 +8,24 @@ export const FeedbackProvider = ({children}) => {
         {
             id: 100001,
             rating: 10,
-            text: 'I like this work, and it look like working fine',
+            text: 'I like this work',
         },
         {
             id: 100002,
             rating: 9,
-            text: 'I like this work, and it look like working fine',
+            text: 'I like this work',
         },
         {
             id: 100003,
             rating: 8,
-            text: 'I like this work, and it look like working fine',
+            text: 'I like this work',
         }
     ])
+
+    const [feedbackEdit, setFeedbackEdit] = useState({
+        item: {},
+        edit: false
+    })
 
     const handleClose = (id) => {
         if (window.confirm("Are you sure you want to close it?")) {
@@ -33,8 +38,32 @@ export const FeedbackProvider = ({children}) => {
         setFeedback([newFeedback, ...feedback])
     }
 
+    const editFeedback = (item) => {
+        setFeedbackEdit({
+            item,
+            edit: true
+        })
+    }
+
+    const updateFeedback = (id, newItem) => {
+        setFeedback(feedback.map(
+            (item) => (item.id === id ? {...item, ...newItem} : item)))
+        setFeedbackEdit({
+            item: {},
+            edit: false,
+        })
+    }
+
     return (
-        <FeedbackContext.Provider value={{feedback, handleClose, addFeedback}}>
+        <FeedbackContext.Provider
+            value={{
+                feedback,
+                handleClose,
+                addFeedback,
+                editFeedback,
+                feedbackEdit,
+                updateFeedback
+            }}>
             {children}
         </FeedbackContext.Provider>
     )
