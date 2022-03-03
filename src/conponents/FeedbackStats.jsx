@@ -3,9 +3,12 @@ import FeedbackContext from "../context/FeedbackContext";
 
 function FeedbackStats() {
     const {feedback} = useContext(FeedbackContext)
+
     let average = feedback.reduce((prev, cur) => {
         return prev + cur.rating
+        console.log(prev, cur)
     }, 0) / feedback.length
+
     return (
         <div className="feedback-stats">
             <h4>Reviews: {feedback.length}</h4>
