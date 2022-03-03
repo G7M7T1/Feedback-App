@@ -6,7 +6,6 @@ function FeedbackStats() {
 
     let average = feedback.reduce((prev, cur) => {
         return prev + cur.rating
-        console.log(prev, cur)
     }, 0) / feedback.length
 
     return (
